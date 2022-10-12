@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Task } from "../../models/task.class";
 import { LEVELS } from "../../models/levels.enum";
 import TaskComponent from "../pure/task";
@@ -12,6 +11,9 @@ const TaskListComponent = () => {
     LEVELS.NORMAL
   );
 
+  const updateState = (id) => {
+    console.log("TODO: update a task state");
+  };
   return (
     <div>
       <div>
@@ -22,7 +24,5 @@ const TaskListComponent = () => {
     </div>
   );
 };
-
-TaskListComponent.propTypes = {};
 
 export default TaskListComponent;

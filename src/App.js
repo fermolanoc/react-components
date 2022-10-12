@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Greeting from "./components/pure/greeting";
 import GreetingFunctional from "./components/pure/greetingFunctional";
 import TaskListComponent from "./components/container/task_list";
+import Contact from "./components/container/contact";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
           {/* Pure component Greeting */}
           {/* <Greeting name={"Fernando"} /> */}
           {/* <GreetingFunctional name="Silvye" /> */}
+          <Contact />
           <TaskListComponent />
         </p>
       </header>

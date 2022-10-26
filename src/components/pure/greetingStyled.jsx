@@ -20,7 +20,8 @@ const logginBtn = {
   border: "1px solid coral",
   color: "#282c34",
   borderRadius: "4px",
-  padding: ".3rem auto",
+  fontSize: ".9rem",
+  padding: "auto 1rem",
   width: "100px",
 };
 

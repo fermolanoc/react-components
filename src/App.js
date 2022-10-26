@@ -8,6 +8,7 @@ import UseEffectExample from "./hooks/use-effect";
 import ComponentWithContext from "./hooks/use-context";
 import { PropsChildren } from "./hooks/props-children";
 import { GreetingStyled } from "./components/pure/greetingStyled";
+import { Clock } from "./components/pure/clock";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           {/* <Contact /> */}
           <GreetingStyled name="Silvye" />
           <TaskListComponent />
+          {/* <Clock /> */}
           {/* <UseStateExample /> */}
           {/* <UseEffectExample /> */}
           {/* <ComponentWithContext /> */}

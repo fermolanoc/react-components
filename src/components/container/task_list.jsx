@@ -34,7 +34,7 @@ const TaskListComponent = () => {
         <h1>Your Tasks:</h1>
       </div>
       {/* TODO: Apply a map to render a task list */}
-      <TaskComponent task={tasks} />;
+      <TaskComponent task={defaultTask} />
     </div>
   );
 };

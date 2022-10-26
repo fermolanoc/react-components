@@ -7,6 +7,7 @@ import UseStateExample from "./hooks/use-state";
 import UseEffectExample from "./hooks/use-effect";
 import ComponentWithContext from "./hooks/use-context";
 import { PropsChildren } from "./hooks/props-children";
+import { GreetingStyled } from "./components/pure/greetingStyled";
 
 function App() {
   return (
@@ -16,16 +17,17 @@ function App() {
           {/* Pure component Greeting */}
           {/* <Greeting name={"Fernando"} /> */}
           {/* <GreetingFunctional name="Silvye" /> */}
-          {/* <Contact />
-          <TaskListComponent /> */}
+          {/* <Contact /> */}
+          <GreetingStyled name="Silvye" />
+          <TaskListComponent />
           {/* <UseStateExample /> */}
           {/* <UseEffectExample /> */}
           {/* <ComponentWithContext /> */}
-          <PropsChildren name="Sylvie">
-            {/* Everything that is here inside the component, will be used as props.children */}
+          {/* Everything that is here inside the component, will be used as props.children */}
+          {/* <PropsChildren name="Sylvie">
             <h3>Content for children managed as props.children</h3>
             <p>&copy;</p>
-          </PropsChildren>
+          </PropsChildren> */}
         </div>
       </header>
     </div>

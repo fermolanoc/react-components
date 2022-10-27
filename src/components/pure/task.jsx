@@ -4,7 +4,7 @@ import { Task } from "../../models/task.class";
 import "../../styles/task.scss";
 import { LEVELS } from "../../models/levels.enum";
 
-const TaskComponent = ({ task }) => {
+const TaskComponent = ({ task, complete, remove }) => {
   useEffect(() => {
     console.log("Task created");
 
@@ -72,8 +72,14 @@ const TaskComponent = ({ task }) => {
         {/* {task.completed ? "Completed" : "Pending"} */}
       </td>
       <td className="text-center">
-        <i className="px-2 bi-trash" style={{ color: "crimson" }}></i>
-        <i className="px-2 bi-file-check" style={{ color: "cyan" }}></i>
+        <i
+          className="px-2 bi-trash task-action"
+          style={{ color: "crimson" }}
+          onClick={() => remove(task)}></i>
+        <i
+          className="px-2 bi-file-check task-action"
+          style={task.completed ? { color: "lightGrey" } : { color: "cyan" }}
+          onClick={() => complete(task)}></i>
       </td>
     </tr>
     // <div className="task-container">
@@ -90,7 +96,9 @@ const TaskComponent = ({ task }) => {
 };
 
 TaskComponent.propTypes = {
-  task: PropTypes.instanceOf(Task),
+  task: PropTypes.instanceOf(Task).isRequired,
+  complete: PropTypes.func.isRequired,
+  remove: PropTypes.func.isRequired,
 };
 
 export default TaskComponent;

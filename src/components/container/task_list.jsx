@@ -32,6 +32,39 @@ const TaskListComponent = () => {
   ]);
   const [loading, setLoading] = useState(true);
 
+  // Functions to handle Tasks
+  function completeTask(task) {
+    console.log(`Complete this task: ${task.completed}`);
+    // Get id of task to be updated
+    const taskIdx = tasks.indexOf(task);
+    console.log(taskIdx);
+
+    // copy the original array of lists
+    const tempTasks = [...tasks];
+    tempTasks[taskIdx].completed = !tempTasks[taskIdx].completed;
+
+    // Update the state of the component with the new tasks list to re render it
+    setTasks(tempTasks);
+  }
+
+  function removeTask(task) {
+    console.log(`Delete this task: ${task.completed}`);
+    // Get id of task to be deleted
+    const taskIdx = tasks.indexOf(task);
+    console.log(taskIdx);
+
+    const tempTasks = [...tasks];
+    // Delete task
+    tempTasks.splice(taskIdx, 1);
+
+    // Update the state of component
+    setTasks(tempTasks);
+  }
+
+  function addTask(task) {
+    setTasks((prevTasks) => [task, ...prevTasks]);
+  }
+
   // Component's LifeCycle control
   useEffect(() => {
     console.log("Tasks state has been modified");
@@ -81,12 +114,19 @@ const TaskListComponent = () => {
               <tbody>
                 {/* TODO: Apply a map to render a task list */}
                 {tasks.map((task, index) => {
-                  return <TaskComponent task={task} key={index} />;
+                  return (
+                    <TaskComponent
+                      task={task}
+                      key={index}
+                      complete={completeTask}
+                      remove={removeTask}
+                    />
+                  );
                 })}
               </tbody>
             </table>
           </div>
-          <TaskForm />
+          <TaskForm add={addTask} />
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ import ComponentWithContext from "./hooks/use-context";
 import { PropsChildren } from "./hooks/props-children";
 import { GreetingStyled } from "./components/pure/greetingStyled";
 import { Clock } from "./components/pure/clock";
+import { Father } from "./components/container/father";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         {/* <Greeting name={"Fernando"} /> */}
         {/* <GreetingFunctional name="Silvye" /> */}
         {/* <Contact /> */}
-        <GreetingStyled name="Silvye" />
+        {/* <GreetingStyled name="Silvye" /> */}
         <TaskListComponent />
         {/* <Clock /> */}
         {/* <UseStateExample /> */}
@@ -30,6 +31,7 @@ function App() {
             <h3>Content for children managed as props.children</h3>
             <p>&copy;</p>
           </PropsChildren> */}
+        {/* <Father /> */}
       </div>
       {/* </header> */}
     </div>

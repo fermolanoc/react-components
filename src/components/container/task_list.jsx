@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Task } from "../../models/task.class";
 import { LEVELS } from "../../models/levels.enum";
 import TaskComponent from "../pure/task";
+import { TaskForm } from "../pure/forms/taskForm";
 
 const TaskListComponent = () => {
   const defaultTask1 = new Task(
@@ -49,7 +50,9 @@ const TaskListComponent = () => {
       <div className="col-12">
         <div className="card">
           {/* Card Header (title) */}
-          <div className="card-header p-3 text-center bg-dark text-warning">
+          <div
+            className="card-header p-3 text-center bg-dark"
+            style={{ color: "tomato" }}>
             <h5>Your Tasks:</h5>
           </div>
           {/* Card Body (content) */}
@@ -83,6 +86,7 @@ const TaskListComponent = () => {
               </tbody>
             </table>
           </div>
+          <TaskForm />
         </div>
       </div>
     </div>

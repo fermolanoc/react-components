@@ -13,25 +13,25 @@ import { Clock } from "./components/pure/clock";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <div>
-          {/* Pure component Greeting */}
-          {/* <Greeting name={"Fernando"} /> */}
-          {/* <GreetingFunctional name="Silvye" /> */}
-          {/* <Contact /> */}
-          <GreetingStyled name="Silvye" />
-          <TaskListComponent />
-          {/* <Clock /> */}
-          {/* <UseStateExample /> */}
-          {/* <UseEffectExample /> */}
-          {/* <ComponentWithContext /> */}
-          {/* Everything that is here inside the component, will be used as props.children */}
-          {/* <PropsChildren name="Sylvie">
+      {/* <header className="App-header"> */}
+      <div className="main-container">
+        {/* Pure component Greeting */}
+        {/* <Greeting name={"Fernando"} /> */}
+        {/* <GreetingFunctional name="Silvye" /> */}
+        {/* <Contact /> */}
+        <GreetingStyled name="Silvye" />
+        <TaskListComponent />
+        {/* <Clock /> */}
+        {/* <UseStateExample /> */}
+        {/* <UseEffectExample /> */}
+        {/* <ComponentWithContext /> */}
+        {/* Everything that is here inside the component, will be used as props.children */}
+        {/* <PropsChildren name="Sylvie">
             <h3>Content for children managed as props.children</h3>
             <p>&copy;</p>
           </PropsChildren> */}
-        </div>
-      </header>
+      </div>
+      {/* </header> */}
     </div>
   );
 }

@@ -10,6 +10,7 @@ import { PropsChildren } from "./hooks/props-children";
 import { GreetingStyled } from "./components/pure/greetingStyled";
 import { Clock } from "./components/pure/clock";
 import { Father } from "./components/container/father";
+import { ContactList } from "./components/container/contact_list";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         {/* <GreetingFunctional name="Silvye" /> */}
         {/* <Contact /> */}
         {/* <GreetingStyled name="Silvye" /> */}
-        <TaskListComponent />
+        {/* <TaskListComponent /> */}
         {/* <Clock /> */}
         {/* <UseStateExample /> */}
         {/* <UseEffectExample /> */}
@@ -32,6 +33,7 @@ function App() {
             <p>&copy;</p>
           </PropsChildren> */}
         {/* <Father /> */}
+        <ContactList />
       </div>
       {/* </header> */}
     </div>

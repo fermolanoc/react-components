@@ -22,7 +22,7 @@ function App() {
         {/* <GreetingFunctional name="Silvye" /> */}
         {/* <Contact /> */}
         {/* <GreetingStyled name="Silvye" /> */}
-        {/* <TaskListComponent /> */}
+        <TaskListComponent />
         {/* <Clock /> */}
         {/* <UseStateExample /> */}
         {/* <UseEffectExample /> */}
@@ -33,7 +33,7 @@ function App() {
             <p>&copy;</p>
           </PropsChildren> */}
         {/* <Father /> */}
-        <ContactList />
+        {/* <ContactList /> */}
       </div>
       {/* </header> */}
     </div>

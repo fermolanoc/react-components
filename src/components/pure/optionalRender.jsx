@@ -26,36 +26,38 @@ const OptionalRender = () => {
     </button>
   );
   return (
-    <div className="d-flex justify-content-between align-items-center container-fluid">
-      <div>{btn}</div>
+    <div className="d-flex justify-content-between align-items-center container-fluid h-auto">
+      <div className="my-2">{btn}</div>
 
       {/* N messages unread */}
-      <div className="d-flex flex-column px-2 my-2 justify-content-center">
-        {numberOfMessages > 0 && (
-          <p>
-            You have{" "}
-            <span style={{ color: "tomato", fontWeight: "bold" }}>
-              {numberOfMessages}
-            </span>{" "}
-            unread message
-            {numberOfMessages === 1 ? "" : "s"}.
-          </p>
-        )}
-        {numberOfMessages === 0 && <p>You have no new messages.</p>}
-        <button
-          onClick={addMessages}
-          className="btn btn-sm my-2"
-          style={{
-            backgroundColor: "tomato",
-            fontWeight: "bold",
-            color: "white",
-            textTransform: "uppercase",
-          }}>
-          {numberOfMessages === 0
-            ? "Add your first message"
-            : "Add a new message"}
-        </button>
-      </div>
+      {access ? (
+        <div className="d-flex flex-column px-2 my-2 justify-content-center">
+          {numberOfMessages > 0 && (
+            <p>
+              You have{" "}
+              <span style={{ color: "tomato", fontWeight: "bold" }}>
+                {numberOfMessages}
+              </span>{" "}
+              unread message
+              {numberOfMessages === 1 ? "" : "s"}.
+            </p>
+          )}
+          {numberOfMessages === 0 && <p>You have no new messages.</p>}
+          <button
+            onClick={addMessages}
+            className="btn btn-sm my-2"
+            style={{
+              backgroundColor: "tomato",
+              fontWeight: "bold",
+              color: "white",
+              textTransform: "uppercase",
+            }}>
+            {numberOfMessages === 0
+              ? "Add your first message"
+              : "Add a new message"}
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 };

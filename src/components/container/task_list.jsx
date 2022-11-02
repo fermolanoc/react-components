@@ -65,6 +65,45 @@ const TaskListComponent = () => {
     setTasks((prevTasks) => [task, ...prevTasks]);
   }
 
+  const Table = () => {
+    return (
+      <table className="table table-striped table-dark table-hover">
+        <thead className="thead-dark">
+          <tr>
+            <th scope="col" className="px-4">
+              Task
+            </th>
+            <th scope="col">Description</th>
+            <th scope="col" className="text-center">
+              Priority
+            </th>
+            <th scope="col" className="text-center">
+              Status
+            </th>
+            <th scope="col" className="text-center">
+              Actions
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* TODO: Apply a map to render a task list */}
+          {tasks.map((task, index) => {
+            return (
+              <TaskComponent
+                task={task}
+                key={index}
+                complete={completeTask}
+                remove={removeTask}
+              />
+            );
+          })}
+        </tbody>
+      </table>
+    );
+  };
+
+  const taskTable = <Table />;
+
   // Component's LifeCycle control
   useEffect(() => {
     console.log("Tasks state has been modified");
@@ -88,45 +127,19 @@ const TaskListComponent = () => {
           <div
             className="card-header p-3 text-center bg-dark"
             style={{ color: "tomato" }}>
-            <h5>Your Tasks:</h5>
+            <h5>
+              {tasks.length !== 0
+                ? `Your Tasks: (${tasks.length})`
+                : "There are no Tasks"}
+            </h5>
           </div>
           {/* Card Body (content) */}
           <div
             className="card-body table-responsive p-0"
             data-mdb-perfect-scrollbar="true"
             style={{ position: "relative", height: "400px" }}>
-            <table className="table table-striped table-dark table-hover">
-              <thead className="thead-dark">
-                <tr>
-                  <th scope="col" className="px-4">
-                    Task
-                  </th>
-                  <th scope="col">Description</th>
-                  <th scope="col" className="text-center">
-                    Priority
-                  </th>
-                  <th scope="col" className="text-center">
-                    Status
-                  </th>
-                  <th scope="col" className="text-center">
-                    Actions
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* TODO: Apply a map to render a task list */}
-                {tasks.map((task, index) => {
-                  return (
-                    <TaskComponent
-                      task={task}
-                      key={index}
-                      complete={completeTask}
-                      remove={removeTask}
-                    />
-                  );
-                })}
-              </tbody>
-            </table>
+            {/* If no tasks, don't render table */}
+            {tasks.length > 0 && taskTable}
           </div>
         </div>
       </div>

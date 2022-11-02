@@ -12,6 +12,7 @@ import { Clock } from "./components/pure/clock";
 import { Father } from "./components/container/father";
 import { ContactList } from "./components/container/contact_list";
 import OptionalRender from "./components/pure/optionalRender";
+import ConditionalRendering from "./components/pure/conditionalRendering";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         {/* <Father /> */}
         {/* <ContactList /> */}
         {/* Conditional Rendering Example */}
+        {/* <ConditionalRendering /> */}
         <OptionalRender />
 
         {/* Final Project */}

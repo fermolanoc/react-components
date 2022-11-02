@@ -87,16 +87,20 @@ const TaskListComponent = () => {
         </thead>
         <tbody>
           {/* TODO: Apply a map to render a task list */}
-          {tasks.map((task, index) => {
-            return (
-              <TaskComponent
-                task={task}
-                key={index}
-                complete={completeTask}
-                remove={removeTask}
-              />
-            );
-          })}
+          {tasks
+            .sort(function (a, b) {
+              return a.completed - b.completed;
+            })
+            .map((task, index) => {
+              return (
+                <TaskComponent
+                  task={task}
+                  key={index}
+                  complete={completeTask}
+                  remove={removeTask}
+                />
+              );
+            })}
         </tbody>
       </table>
     );

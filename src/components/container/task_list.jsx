@@ -124,7 +124,7 @@ const TaskListComponent = () => {
   return (
     <div>
       <h5 className="px-2 mt-4">Add a new Task</h5>
-      <TaskForm add={addTask} />
+      <TaskForm add={addTask} length={tasks.length} />
       <div className="col-12">
         <div className="card">
           {/* Card Header (title) */}

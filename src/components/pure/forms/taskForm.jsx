@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { LEVELS } from "../../../models/levels.enum";
 import { Task } from "../../../models/task.class";
 
-export const TaskForm = ({ add }) => {
+export const TaskForm = ({ add, length }) => {
   const nameRef = useRef("");
   const descriptionRef = useRef("");
   const levelRef = useRef(LEVELS.NORMAL);
@@ -82,7 +82,7 @@ export const TaskForm = ({ add }) => {
             color: "white",
             textTransform: "uppercase",
           }}>
-          Add
+          {length === 0 ? "Create first task" : "Add task"}
         </button>
       </div>
     </form>
@@ -91,4 +91,5 @@ export const TaskForm = ({ add }) => {
 
 TaskForm.propTypes = {
   add: PropTypes.func.isRequired,
+  length: PropTypes.number.isRequired,
 };

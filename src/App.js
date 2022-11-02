@@ -11,6 +11,7 @@ import { GreetingStyled } from "./components/pure/greetingStyled";
 import { Clock } from "./components/pure/clock";
 import { Father } from "./components/container/father";
 import { ContactList } from "./components/container/contact_list";
+import OptionalRender from "./components/pure/optionalRender";
 
 function App() {
   return (
@@ -22,7 +23,6 @@ function App() {
         {/* <GreetingFunctional name="Silvye" /> */}
         {/* <Contact /> */}
         {/* <GreetingStyled name="Silvye" /> */}
-        <TaskListComponent />
         {/* <Clock /> */}
         {/* <UseStateExample /> */}
         {/* <UseEffectExample /> */}
@@ -34,6 +34,11 @@ function App() {
           </PropsChildren> */}
         {/* <Father /> */}
         {/* <ContactList /> */}
+        {/* Conditional Rendering Example */}
+        <OptionalRender />
+
+        {/* Final Project */}
+        <TaskListComponent />
       </div>
       {/* </header> */}
     </div>

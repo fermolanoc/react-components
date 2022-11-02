@@ -30,7 +30,7 @@ export const TaskForm = ({ add }) => {
   return (
     <form
       onSubmit={addTask}
-      className="d-flex-col justify-content-center align-items-center mb-4 px-4">
+      className="d-flex-col justify-content-center align-items-center mb-4 px-2">
       <div className="form-group my-3">
         <label htmlFor="inputName" className="sr-only">
           Task name:

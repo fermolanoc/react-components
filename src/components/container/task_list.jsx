@@ -80,6 +80,8 @@ const TaskListComponent = () => {
   };
   return (
     <div>
+      <h5 className="px-2 mt-4">Add a new Task</h5>
+      <TaskForm add={addTask} />
       <div className="col-12">
         <div className="card">
           {/* Card Header (title) */}
@@ -126,7 +128,6 @@ const TaskListComponent = () => {
               </tbody>
             </table>
           </div>
-          <TaskForm add={addTask} />
         </div>
       </div>
     </div>

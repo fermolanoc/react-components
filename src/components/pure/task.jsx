@@ -54,10 +54,16 @@ const TaskComponent = ({ task, complete, remove }) => {
   return (
     <tr className="fw-normal">
       <td className="px-4">
-        <span>{task.name}</span>
+        <span
+          className={`${task.completed ? "text-decoration-line-through" : ""}`}>
+          {task.name}
+        </span>
       </td>
       <td>
-        <span>{task.description}</span>
+        <span
+          className={`${task.completed ? "text-decoration-line-through" : ""}`}>
+          {task.description}
+        </span>
       </td>
       <td className="text-center">
         {/* <span className="align-middle">{task.level}</span> */}

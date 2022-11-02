@@ -111,7 +111,9 @@ const TaskListComponent = () => {
   // Component's LifeCycle control
   useEffect(() => {
     console.log("Tasks state has been modified");
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
 
     return () => {
       console.log("Task list component will unmount");
@@ -143,7 +145,11 @@ const TaskListComponent = () => {
             data-mdb-perfect-scrollbar="true"
             style={{ position: "relative", height: "400px" }}>
             {/* If no tasks, don't render table */}
-            {tasks.length > 0 && taskTable}
+            {loading ? (
+              <p className="text-center my-4 fs-4">⏳ Loading Tasks</p>
+            ) : (
+              tasks.length > 0 && taskTable
+            )}
           </div>
         </div>
       </div>
